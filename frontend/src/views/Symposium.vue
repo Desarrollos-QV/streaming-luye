@@ -310,15 +310,29 @@ const toggleMute = () => {
   }
 };
 
-const toggleFullscreen = () => {
+const toggleFullscreen = async () => {
   if (!document.fullscreenElement) {
     if (playerWrapper.value?.requestFullscreen) {
-      playerWrapper.value.requestFullscreen();
+      try {
+        await playerWrapper.value.requestFullscreen();
+        isFullscreen.value = true;
+        // Intentar forzar orientación horizontal en móviles
+        if (screen.orientation && screen.orientation.lock) {
+          screen.orientation.lock('landscape').catch(() => {});
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    } else if (playerWrapper.value?.webkitRequestFullscreen) {
+      playerWrapper.value.webkitRequestFullscreen();
       isFullscreen.value = true;
     }
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
+      isFullscreen.value = false;
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
       isFullscreen.value = false;
     }
   }
@@ -427,6 +441,9 @@ onMounted(async () => {
 
   document.addEventListener('fullscreenchange', () => {
     isFullscreen.value = !!document.fullscreenElement;
+    if (!document.fullscreenElement && screen.orientation && screen.orientation.unlock) {
+      screen.orientation.unlock();
+    }
   });
 });
 
@@ -629,6 +646,11 @@ onUnmounted(() => {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.player-wrapper:fullscreen .main-video,
+.player-wrapper:-webkit-full-screen .main-video {
+  object-fit: contain;
 }
 
 /* Waiting Overlay */
