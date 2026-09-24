@@ -38,11 +38,75 @@
           <div class="grid grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1">{{ $t('landing.specialtyLabel') }}</label>
-              <input v-model="form.specialty" required type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-luye-teal focus:border-transparent outline-none transition-all" :placeholder="$t('landing.specialtyPlaceholder')" />
+              <select v-model="form.specialty" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-luye-teal focus:border-transparent outline-none transition-all bg-white text-gray-700">
+                <option value="" disabled selected>{{ $t('landing.specialtyPlaceholder') }}</option>
+                <option value="alergologo">alergologo</option>
+                <option value="anestesiologo">anestesiologo</option>
+                <option value="cardiologo">cardiologo</option>
+                <option value="cardiologo_intervencionista">cardiologo intervencionista</option>
+                <option value="cirujano_general">cirujano general</option>
+                <option value="cirujano_plastico">cirujano plastico</option>
+                <option value="dermatologo">dermatologo</option>
+                <option value="endocrinologo">endocrinologo</option>
+                <option value="especialista_manejo_dolor">especialista manejo dolor</option>
+                <option value="especialista_enfermedades_contagiosas">especialista enfermedades contagiosas</option>
+                <option value="especialista_fisioterapia_rehabilitacion">especialista fisioterapia rehabilitacion</option>
+                <option value="especialista_medicina_urgencias">especialista medicina urgencias</option>
+                <option value="especialista_medicina_deporte">especialista medicina deporte</option>
+                <option value="especialista_medicina_hiperbarica">especialista medicina hiperbarica</option>
+                <option value="especialista_medicina_intensiva">especialista medicina intensiva</option>
+                <option value="especialista_medicina_laboral">especialista medicina laboral</option>
+                <option value="especialista_medicina_nuclear">especialista medicina nuclear</option>
+                <option value="especialista_cuidados_paliativos">especialista cuidados paliativos</option>
+                <option value="especialista_trastornos_sueno">especialista trastornos sueno</option>
+                <option value="gastroenterologo">gastroenterologo</option>
+                <option value="geriatria">geriatria</option>
+                <option value="ginecologo">ginecologo</option>
+                <option value="hematologo">hematologo</option>
+                <option value="hepatologo">hepatologo</option>
+                <option value="hospitalista">hospitalista</option>
+                <option value="inmunologo">inmunologo</option>
+                <option value="medicina_general">medicina general</option>
+                <option value="medicina_interna">medicina interna</option>
+                <option value="medico_forense">medico forense</option>
+                <option value="medico_genetico">medico genetico</option>
+                <option value="nefrologo">nefrologo</option>
+                <option value="neonatologo">neonatologo</option>
+                <option value="neumologo">neumologo</option>
+                <option value="neurologo">neurologo</option>
+                <option value="obstetra">obstetra</option>
+                <option value="oftalmologo">oftalmologo</option>
+                <option value="oncologo">oncologo</option>
+                <option value="oncologo_ginecologico">oncologo ginecologico</option>
+                <option value="oncologo_radiologo">oncologo radiologo</option>
+                <option value="otorrinolaringologo">otorrinolaringologo</option>
+                <option value="patologo">patologo</option>
+                <option value="patologo_forense">patologo forense</option>
+                <option value="pediatra">pediatra</option>
+                <option value="pediatra_especialista_desarrollo">pediatra especialista desarrollo</option>
+                <option value="perinatologo">perinatologo</option>
+                <option value="psiquiatra">psiquiatra</option>
+                <option value="psiquiatra_especialista_adicciones">psiquiatra especialista adicciones</option>
+                <option value="radiologo">radiologo</option>
+                <option value="reumatologo">reumatologo</option>
+                <option value="urologo">urologo</option>
+                <option value="otro">otro</option>
+              </select>
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1">{{ $t('landing.countryLabel') }}</label>
-              <input v-model="form.country" required type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-luye-teal focus:border-transparent outline-none transition-all" :placeholder="$t('landing.countryPlaceholder')" />
+              <select v-model="form.country" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-luye-teal focus:border-transparent outline-none transition-all bg-white text-gray-700">
+                <option value="" disabled selected>{{ $t('landing.countryPlaceholder') }}</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Centroamérica">Centroamérica</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Chile">Chile</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="México">México</option>
+                <option value="Perú">Perú</option>
+                <option value="Uruguay">Uruguay</option>
+              </select>
             </div>
           </div>
 
