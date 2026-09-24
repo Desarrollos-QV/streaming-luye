@@ -339,6 +339,17 @@ const onTimeUpdate = () => {
   }
 };
 
+/* ── Playback Helper ─────────────────────────── */
+const forcePlay = () => {
+  if (!videoPlayer.value) return;
+  videoPlayer.value.play().catch(() => {
+    // Si el navegador bloquea autoplay, intentamos de nuevo muteado
+    videoPlayer.value.muted = true;
+    isMuted.value = true;
+    videoPlayer.value.play().catch(console.error);
+  });
+};
+
 /* ── Sockets ─────────────────────────────────── */
 onMounted(async () => {
   // Fetch initial settings
@@ -361,7 +372,7 @@ onMounted(async () => {
     if (videoPlayer.value) {
       videoPlayer.value.currentTime = state.currentTime;
       state.isPlaying
-        ? videoPlayer.value.play().catch(() => {})
+        ? forcePlay()
         : videoPlayer.value.pause();
     }
   });
@@ -378,7 +389,7 @@ onMounted(async () => {
       const serverTime = (Date.now() - startTime) / 1000;
       if (Math.abs(videoPlayer.value.currentTime - serverTime) > 1)
         videoPlayer.value.currentTime = serverTime;
-      videoPlayer.value.play().catch(() => {});
+      forcePlay();
     }
   });
 
