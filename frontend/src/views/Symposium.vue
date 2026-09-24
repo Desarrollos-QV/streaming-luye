@@ -26,10 +26,19 @@
       </div>
 
       <div class="header-right">
-        <!-- Selector de Idioma (deshabilitado porque el idioma lo dicta la URL) -->
-        <div class="lang-selector opacity-50 cursor-not-allowed">
+        <!-- Selector de Idioma -->
+        <div class="lang-selector">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span class="text-sm font-bold uppercase">{{ locale }}</span>
+          <select 
+            class="bg-transparent font-bold uppercase outline-none cursor-pointer text-sm" 
+            :value="locale" 
+            @change="changeLanguage($event.target.value)"
+            style="color: inherit; -webkit-appearance: none; appearance: none; padding-right: 4px;"
+          >
+            <option value="es" style="color: black;">ES</option>
+            <option value="en" style="color: black;">EN</option>
+            <option value="pt" style="color: black;">PT</option>
+          </select>
         </div>
 
         <!-- Toggle Chat (Móvil) -->
@@ -240,6 +249,12 @@ const { t, locale } = useI18n();
 const langParam = route.params.lang || 'es';
 const supportedLangs = ['es', 'en', 'pt'];
 locale.value = supportedLangs.includes(langParam) ? langParam : 'es';
+
+const changeLanguage = (newLang) => {
+  if (newLang !== locale.value) {
+    window.location.href = `/live/${newLang}`;
+  }
+};
 
 // URL de video basada en idioma
 const videoSources = ref({
