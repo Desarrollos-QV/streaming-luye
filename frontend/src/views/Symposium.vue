@@ -157,9 +157,15 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             {{ $t('chat.title') }}
           </div>
-          <div class="online-pill">
-            <span class="online-dot"></span>
-            {{ $t('chat.online') }}
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div class="online-pill">
+              <span class="online-dot"></span>
+              {{ $t('chat.online') }}
+            </div>
+            <!-- Botón para cerrar en móvil -->
+            <button class="chat-close-btn" @click="isChatOpen = false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
           </div>
         </div>
 
@@ -879,6 +885,23 @@ onUnmounted(() => {
   background: #4ade80;
   animation: pulse-dot 2s ease-in-out infinite;
 }
+.chat-close-btn {
+  display: none;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #94a3b8;
+  border-radius: 6px;
+  padding: 4px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.chat-close-btn:hover {
+  background: rgba(239,68,68,0.15);
+  color: #f87171;
+  border-color: rgba(239,68,68,0.3);
+}
 
 .chat-messages {
   flex: 1;
@@ -1015,6 +1038,11 @@ onUnmounted(() => {
     box-shadow: -8px 0 32px rgba(0,0,0,0.5);
   }
   .chat-panel.mobile-open { transform: translateX(0); }
+  
+  .chat-close-btn {
+    display: flex;
+  }
+
   .chat-toggle-btn { display: flex; }
   .chat-mobile-backdrop {
     position: fixed;
