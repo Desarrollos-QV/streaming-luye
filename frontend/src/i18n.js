@@ -28,6 +28,23 @@ const messages = {
       date: 'Sep 4, 2026',
       duration: '90 min',
       broadcasting: 'En Transmisión'
+    },
+    landing: {
+      title: 'Global Medical<br/>Symposium 2026',
+      subtitle: 'Únete a líderes mundiales en la industria farmacéutica y descubre los últimos avances científicos.',
+      feature1: 'Transmisión en 3 idiomas',
+      feature2: 'Acceso exclusivo en vivo',
+      registerTitle: 'Registro de Especialista',
+      nameLabel: 'Nombre Completo',
+      namePlaceholder: 'Dr. Juan Pérez',
+      emailLabel: 'Correo Electrónico',
+      emailPlaceholder: 'juan.perez@hospital.com',
+      specialtyLabel: 'Especialidad',
+      specialtyPlaceholder: 'Ej. Oncología',
+      countryLabel: 'País',
+      countryPlaceholder: 'Ej. México',
+      submitBtn: 'Ingresar al Simposio',
+      errorReg: 'Error al registrarse'
     }
   },
   en: {
@@ -57,6 +74,23 @@ const messages = {
       date: 'Sep 4, 2026',
       duration: '90 min',
       broadcasting: 'Broadcasting'
+    },
+    landing: {
+      title: 'Global Medical<br/>Symposium 2026',
+      subtitle: 'Join world leaders in the pharmaceutical industry and discover the latest scientific advances.',
+      feature1: 'Broadcast in 3 languages',
+      feature2: 'Exclusive live access',
+      registerTitle: 'Specialist Registration',
+      nameLabel: 'Full Name',
+      namePlaceholder: 'Dr. John Doe',
+      emailLabel: 'Email Address',
+      emailPlaceholder: 'john.doe@hospital.com',
+      specialtyLabel: 'Specialty',
+      specialtyPlaceholder: 'E.g. Oncology',
+      countryLabel: 'Country',
+      countryPlaceholder: 'E.g. United States',
+      submitBtn: 'Enter Symposium',
+      errorReg: 'Registration Error'
     }
   },
   pt: {
@@ -86,6 +120,23 @@ const messages = {
       date: '4 Set, 2026',
       duration: '90 min',
       broadcasting: 'Em Transmissão'
+    },
+    landing: {
+      title: 'Global Medical<br/>Symposium 2026',
+      subtitle: 'Junte-se a líderes mundiais na indústria farmacêutica e descubra os mais recentes avanços científicos.',
+      feature1: 'Transmissão em 3 idiomas',
+      feature2: 'Acesso exclusivo ao vivo',
+      registerTitle: 'Registro de Especialista',
+      nameLabel: 'Nome Completo',
+      namePlaceholder: 'Dr. João Silva',
+      emailLabel: 'Correio Eletrônico',
+      emailPlaceholder: 'joao.silva@hospital.com',
+      specialtyLabel: 'Especialidade',
+      specialtyPlaceholder: 'Ex. Oncologia',
+      countryLabel: 'País',
+      countryPlaceholder: 'Ex. Brasil',
+      submitBtn: 'Entrar no Simpósio',
+      errorReg: 'Erro ao registrar'
     }
   }
 };
