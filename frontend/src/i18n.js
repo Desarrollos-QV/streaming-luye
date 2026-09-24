@@ -30,8 +30,8 @@ const messages = {
       broadcasting: 'En Transmisión'
     },
     landing: {
-      title: 'Global Medical<br/>Symposium 2026',
-      subtitle: 'Únete a líderes mundiales en la industria farmacéutica y descubre los últimos avances científicos.',
+      title: '6o Simposio de Psiquiatría',
+      subtitle: 'Profesionales de la salud especialistas en Psiquiatría nos comparten sus conocimientos en temas relevantes relacionados con el diagnóstico y tratamiento de trastornos mentales.',
       feature1: 'Transmisión en 3 idiomas',
       feature2: 'Acceso exclusivo en vivo',
       registerTitle: 'Registro de Especialista',
@@ -76,8 +76,8 @@ const messages = {
       broadcasting: 'Broadcasting'
     },
     landing: {
-      title: 'Global Medical<br/>Symposium 2026',
-      subtitle: 'Join world leaders in the pharmaceutical industry and discover the latest scientific advances.',
+      title: '6th Psychiatry Symposium',
+      subtitle: 'Mental health professionals specializing in Psychiatry share their knowledge on relevant topics related to the diagnosis and treatment of mental disorders.',
       feature1: 'Broadcast in 3 languages',
       feature2: 'Exclusive live access',
       registerTitle: 'Specialist Registration',
@@ -122,8 +122,8 @@ const messages = {
       broadcasting: 'Em Transmissão'
     },
     landing: {
-      title: 'Global Medical<br/>Symposium 2026',
-      subtitle: 'Junte-se a líderes mundiais na indústria farmacêutica e descubra os mais recentes avanços científicos.',
+      title: '6º Simpósio de Psiquiatria',
+      subtitle: 'Profissionais de saúde especialistas em Psiquiatria compartilham seus conhecimentos sobre temas relevantes relacionados ao diagnóstico e tratamento de transtornos mentais.',
       feature1: 'Transmissão em 3 idiomas',
       feature2: 'Acesso exclusivo ao vivo',
       registerTitle: 'Registro de Especialista',

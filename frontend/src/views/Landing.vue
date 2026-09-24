@@ -23,8 +23,7 @@
 
       <!-- Sección Derecha: Formulario de Registro -->
       <div class="md:w-1/2 p-10 bg-white">
-        <h2 class="text-2xl font-bold text-luye-navy mb-6">{{ $t('landing.registerTitle') }}</h2>
-        
+       
         <form @submit.prevent="handleRegister" class="space-y-4">
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">{{ $t('landing.nameLabel') }}</label>
