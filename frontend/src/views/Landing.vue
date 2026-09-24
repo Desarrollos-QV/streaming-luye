@@ -72,12 +72,24 @@ const form = ref({
 });
 
 const handleRegister = async () => {
-  // Simularemos la llamada al backend por ahora
   try {
-    /* En producción:
-    const res = await axios.post('/api/auth/register', form.value);
-    localStorage.setItem('token', res.data.token);
-    */
+    const res = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form.value)
+    });
+
+    if (!res.ok) {
+      const errorData = await res.json().catch(() => ({}));
+      throw new Error(errorData.message || 'Error al registrarse');
+    }
+
+    const data = await res.json();
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+    }
     
     // Guardamos nombre en localStorage para usarlo en el chat
     localStorage.setItem('userName', form.value.name);
@@ -86,7 +98,7 @@ const handleRegister = async () => {
     const redirectUrl = route.query.redirect || '/live/es';
     router.push(redirectUrl);
   } catch (error) {
-    alert('Error al registrarse');
+    alert(error.message || 'Error al registrarse');
   }
 };
 </script>
