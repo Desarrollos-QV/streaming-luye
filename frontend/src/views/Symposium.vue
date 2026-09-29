@@ -143,11 +143,7 @@
           <div class="session-meta-right">
             <div class="meta-chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-xs"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              {{ $t('meta.date') }}
-            </div>
-            <div class="meta-chip teal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-xs"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-              {{ $t('meta.duration') }}
+              Sep 29, 2026
             </div>
             <div class="meta-chip orange" v-if="isPlaying">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-xs"><circle cx="12" cy="12" r="10"/><path d="M10 9l5 3-5 3z"/></svg>
